@@ -69,6 +69,7 @@ class WysiwygEditor extends Component {
 
   componentDidMount() {
     this.modalHandler.init(this.wrapperId);
+    console.log('INNNNNNNNNNNNNNNNNNNN')
   }
   // todo: change decorators depending on properties recceived in componentWillReceiveProps.
 
