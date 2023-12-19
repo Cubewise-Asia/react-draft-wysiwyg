@@ -91,7 +91,8 @@
     "flow": "flow; test $? -eq 0 -o $? -eq 2",
     "check": "npm run lint && npm run flow",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepare": "npm run build"
   },
   "license": "MIT",
   "eslintConfig": {
