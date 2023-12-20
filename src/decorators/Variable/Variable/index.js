@@ -7,6 +7,7 @@ class Variable {
   }
   getVariableComponent = () => {
     const VariableComponent = ({ children }) => children;
+    console.log("getVariableComponent =======");
     VariableComponent.propTypes = {
       entityKey: PropTypes.number,
       children: PropTypes.array,
@@ -29,7 +30,7 @@ Variable.prototype.findMentionEntities = (
     const entityKey = character.getEntity();
     return (
       entityKey !== null &&
-      contentState.getEntity(entityKey).getType() === "MENTION"
+      contentState.getEntity(entityKey).getType() === "VARIABLE"
     );
   }, callback);
 };

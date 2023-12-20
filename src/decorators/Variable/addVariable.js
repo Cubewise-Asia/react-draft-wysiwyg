@@ -11,7 +11,7 @@ export default function addVariable(
   const { value, url } = suggestion;
   const entityKey = editorState
     .getCurrentContent()
-    .createEntity("MENTION", "IMMUTABLE", {
+    .createEntity("VARIABLE", "IMMUTABLE", {
       text: `${trigger}${value}`,
       value,
       url,
