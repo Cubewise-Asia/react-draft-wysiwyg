@@ -69,6 +69,7 @@ class WysiwygEditor extends Component {
   }
 
   componentDidMount() {
+    console.log("componentDidMount", this.props);
     this.modalHandler.init(this.wrapperId);
   }
   // todo: change decorators depending on properties recceived in componentWillReceiveProps.
@@ -213,6 +214,7 @@ class WysiwygEditor extends Component {
         showOpenOptionOnHover: toolbar.link.showOpenOptionOnHover,
       }),
     ];
+    console.log("getCompositeDecorator", this.props);
     if (this.props.mention) {
       decorators.push(
         ...getMentionDecorators({
@@ -247,7 +249,9 @@ class WysiwygEditor extends Component {
 
   getEditorState = () => (this.state ? this.state.editorState : null);
 
-  getSuggestions = () => this.props.mention && this.props.mention.suggestions;
+  getSuggestions = () =>
+    (this.props.mention && this.props.mention.suggestions) ||
+    (this.props.variable && this.props.variable.suggestions);
 
   afterChange = (editorState) => {
     setTimeout(() => {
@@ -336,6 +340,7 @@ class WysiwygEditor extends Component {
       "onBlur",
       "onTab",
       "mention",
+      "variable",
       "hashtag",
       "ariaLabel",
       "customBlockRenderFunc",
@@ -545,6 +550,7 @@ WysiwygEditor.propTypes = {
   onBlur: PropTypes.func,
   onTab: PropTypes.func,
   mention: PropTypes.object,
+  variable: PropTypes.object,
   hashtag: PropTypes.object,
   textAlignment: PropTypes.string, // eslint-disable-line react/no-unused-prop-types
   readOnly: PropTypes.bool,

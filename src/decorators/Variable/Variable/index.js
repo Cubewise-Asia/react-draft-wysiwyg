@@ -5,22 +5,22 @@ class Variable {
   constructor(className) {
     this.className = className;
   }
-  getMentionComponent = () => {
-    const MentionComponent = ({ children }) => children;
-    MentionComponent.propTypes = {
+  getVariableComponent = () => {
+    const VariableComponent = ({ children }) => children;
+    VariableComponent.propTypes = {
       entityKey: PropTypes.number,
       children: PropTypes.array,
       contentState: PropTypes.object,
     };
-    return MentionComponent;
+    return VariableComponent;
   };
-  getMentionDecorator = () => ({
+  getVariableDecorators = () => ({
     strategy: this.findMentionEntities,
-    component: this.getMentionComponent(),
+    component: this.getVariableComponent(),
   });
 }
 
-Mention.prototype.findMentionEntities = (
+Variable.prototype.findMentionEntities = (
   contentBlock,
   callback,
   contentState
