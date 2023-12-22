@@ -234,9 +234,7 @@ class WysiwygEditor extends Component {
 
   getEditorState = () => (this.state ? this.state.editorState : null);
 
-  getSuggestions = () =>
-    (this.props.mention && this.props.mention.suggestions) ||
-    (this.props.variable && this.props.variable.suggestions);
+  getSuggestions = () => this.props.mention && this.props.mention.suggestions;
 
   afterChange = (editorState) => {
     setTimeout(() => {
