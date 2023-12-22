@@ -9,7 +9,7 @@ class Mention {
   }
   getMentionComponent = () => {
     // todo: add a component for variable
-    const MentionComponent = ({children}) => children;
+    const MentionComponent = ({ children }) => children;
     MentionComponent.propTypes = {
       entityKey: PropTypes.number,
       children: PropTypes.array,
