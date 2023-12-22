@@ -8,6 +8,7 @@ class Mention {
     this.className = className;
   }
   getMentionComponent = () => {
+    // todo: add a component for variable
     const className = this.className;
     const MentionComponent = ({ entityKey, children, contentState }) => {
       const { url, value } = contentState.getEntity(entityKey).getData();
@@ -23,13 +24,13 @@ class Mention {
     MentionComponent.propTypes = {
       entityKey: PropTypes.number,
       children: PropTypes.array,
-      contentState: PropTypes.object
+      contentState: PropTypes.object,
     };
     return MentionComponent;
   };
   getMentionDecorator = () => ({
     strategy: this.findMentionEntities,
-    component: this.getMentionComponent()
+    component: this.getMentionComponent(),
   });
 }
 
@@ -38,7 +39,7 @@ Mention.prototype.findMentionEntities = (
   callback,
   contentState
 ) => {
-  contentBlock.findEntityRanges(character => {
+  contentBlock.findEntityRanges((character) => {
     const entityKey = character.getEntity();
     return (
       entityKey !== null &&
