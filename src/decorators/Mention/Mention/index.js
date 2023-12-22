@@ -8,8 +8,8 @@ class Mention {
     this.className = className;
   }
   getMentionComponent = () => {
+    // todo: add a component for variable
     const className = this.className;
-    console.log("getMentionComponent =======");
     const MentionComponent = ({ entityKey, children, contentState }) => {
       const { url, value } = contentState.getEntity(entityKey).getData();
       return (

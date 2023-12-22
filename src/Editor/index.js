@@ -29,7 +29,6 @@ import { handlePastedText } from "../utils/handlePaste";
 import Controls from "../controls";
 import getLinkDecorator from "../decorators/Link";
 import getMentionDecorators from "../decorators/Mention";
-import getVariableDecorators from "../decorators/Variable";
 import getHashtagDecorator from "../decorators/HashTag";
 import getBlockRenderFunc from "../renderer";
 import defaultToolbar from "../config/defaultToolbar";
@@ -69,7 +68,6 @@ class WysiwygEditor extends Component {
   }
 
   componentDidMount() {
-    console.log("componentDidMount", this.props);
     this.modalHandler.init(this.wrapperId);
   }
   // todo: change decorators depending on properties recceived in componentWillReceiveProps.
@@ -214,23 +212,10 @@ class WysiwygEditor extends Component {
         showOpenOptionOnHover: toolbar.link.showOpenOptionOnHover,
       }),
     ];
-    console.log("getCompositeDecorator", this.props);
     if (this.props.mention) {
       decorators.push(
         ...getMentionDecorators({
           ...this.props.mention,
-          onChange: this.onChange,
-          getEditorState: this.getEditorState,
-          getSuggestions: this.getSuggestions,
-          getWrapperRef: this.getWrapperRef,
-          modalHandler: this.modalHandler,
-        })
-      );
-    }
-    if (this.props.variable) {
-      decorators.push(
-        ...getVariableDecorators({
-          ...this.props.variable,
           onChange: this.onChange,
           getEditorState: this.getEditorState,
           getSuggestions: this.getSuggestions,
