@@ -323,7 +323,6 @@ class WysiwygEditor extends Component {
       "onBlur",
       "onTab",
       "mention",
-      "variable",
       "hashtag",
       "ariaLabel",
       "customBlockRenderFunc",
@@ -533,7 +532,6 @@ WysiwygEditor.propTypes = {
   onBlur: PropTypes.func,
   onTab: PropTypes.func,
   mention: PropTypes.object,
-  variable: PropTypes.object,
   hashtag: PropTypes.object,
   textAlignment: PropTypes.string, // eslint-disable-line react/no-unused-prop-types
   readOnly: PropTypes.bool,
