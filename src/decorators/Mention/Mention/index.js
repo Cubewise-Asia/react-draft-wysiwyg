@@ -9,18 +9,7 @@ class Mention {
   }
   getMentionComponent = () => {
     // todo: add a component for variable
-    const className = this.className;
-    const MentionComponent = ({ entityKey, children, contentState }) => {
-      const { url, value } = contentState.getEntity(entityKey).getData();
-      return (
-        <a
-          href={url || value}
-          className={classNames("rdw-mention-link", className)}
-        >
-          {children}
-        </a>
-      );
-    };
+    const MentionComponent = ({children}) => children;
     MentionComponent.propTypes = {
       entityKey: PropTypes.number,
       children: PropTypes.array,
