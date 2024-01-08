@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { EditorState, convertToRaw, ContentState, Modifier } from 'draft-js';
-import draftToHtml from 'draftjs-to-html';
+import draftToHtml from '@cubewise/draftjs-to-html';
 import htmlToDraft from 'html-to-draftjs';
 import { Editor } from 'react-draft-wysiwyg';
 import Codemirror from 'react-codemirror';

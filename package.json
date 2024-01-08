@@ -1,14 +1,12 @@
 {
-  "name": "react-draft-wysiwyg",
+  "name": "@cubewise/react-draft-wysiwyg",
   "version": "1.15.0",
   "description": "A wysiwyg on top of DraftJS.",
   "main": "dist/react-draft-wysiwyg.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jpuri/react-draft-wysiwyg.git"
-  },
+  "module": "dist/react-draft-wysiwyg.js",
   "author": "Jyoti Puri",
   "devDependencies": {
+    "@cubewise/draftjs-to-html": "git+https://git@github.com/Cubewise-Asia/draftjs-to-html.git#master",
     "@babel/core": "^7.22.5",
     "@babel/plugin-proposal-class-properties": "^7.18.6",
     "@babel/plugin-transform-class-properties": "^7.22.5",
@@ -31,7 +29,6 @@
     "cross-env": "^7.0.3",
     "css-loader": "^5.2.7",
     "draft-js": "^0.11.7",
-    "draftjs-to-html": "^0.9.1",
     "draftjs-to-markdown": "^0.6.0",
     "embed-video": "^2.0.4",
     "enzyme": "^3.11.0",
